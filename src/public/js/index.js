@@ -27,10 +27,13 @@ if (!user) {
 chatbox.addEventListener('keyup', event => {
     if (event.key === 'Enter') {
         const message = chatbox.value.trim()
+        const horas = new Date().toLocaleTimeString ()
+
         if (message.length > 0) {
             socket.emit('message', {
                 user,
-                message
+                message,
+                horas
             })
 
             chatbox.value = ''
@@ -46,8 +49,8 @@ socket.on('logs', data => {
     messages = ' '
             
     data.forEach(msn => {
-       const horas = new Date().toLocaleTimeString ()
-       messages = `<p><i>${msn.user}</i>: ${msn.message} ${horas}</p>` + messages
+       
+       messages = `<p><i>${msn.user}</i>: ${msn.message} ${msn.horas}</p>` + messages
        
     })
 
