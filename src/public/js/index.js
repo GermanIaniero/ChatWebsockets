@@ -43,37 +43,13 @@ socket.on('logs', data => {
     const divLogs = document.getElementById('logs')
     console.log(data)
     let messages = ''
-    messages = '.center' +
-	'.contacts' +
-		'i.fas.fa-bars.fa-2x' +
-		'h2 Contacts'+
-		
-		'.contact'+
-			'.pic.danvers'
+    messages = ' '
             
     data.forEach(msn => {
-       // messages = `<p><i>${msn.user}</i>: ${msn.message}</p>` + messages
-
-        messages = messages + `.name ${msn.user}`
-        messages = messages + `.message` 
-        messages = messages + `.chat`
-		messages = messages + `.contact.bar`
-        messages = messages + `.pic.stark`
-		
-		messages = messages + `#chat.messages`
-			
-        messages = messages + `.message.parker ${msn.message}`
+       const horas = new Date().toLocaleTimeString ()
+       messages = `<p><i>${msn.user}</i>: ${msn.message} ${horas}</p>` + messages
+       
     })
-    messages = messages + '.message.stark'
-    messages = messages + '.typing.typing-1'
-    messages = messages + '.typing.typing-2'
-    messages = messages + '.typing.typing-3'
-    messages = messages + '.input'
-    messages = messages + 'i.fas.fa-camera'
-    messages = messages + 'i.far.fa-laugh-beam'
-    messages = messages + 'input type="text" placeholder="Type your message here!"'
-    messages = messages + 'i.fas.fa-microphone'
-
 
     console.log (messages)
     divLogs.innerHTML = messages

@@ -1,9 +1,31 @@
-<h1>Este es el chat 🔥🔥🔥🔥🔥</h1>
-<div>
-    <i id="username"></i> <input id='chatbox'>
-</div>
-<div id="logs"></div>
+<section style="background-color: #eee;">
+    <section class="container py-5">
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/static/js/index.js" ></script>
+        <div class="row">
+
+            <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+
+                <h5 class="font-weight-bold mb-3 text-center text-lg-start">Miembro</h5>
+
+            </div>
+
+            <div class="col-md-6 col-lg-7 col-xl-8">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+                    class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between p-3">
+                        <p class="fw-bold mb-0" id="username"></p>
+                        <input type="text" class="form-control form-control-lg" id='chatbox'
+                            placeholder="Escriba mensaje">
+
+                    <div id="logs"></div>
+
+                </div>
+            </div>    
+        </div>
+    </section>
+</section>        
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script src="/socket.io/socket.io.js"></script>
+                    <script src="/static/js/index.js"></script>
